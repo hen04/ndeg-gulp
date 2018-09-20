@@ -12,6 +12,7 @@ var gulp = require('gulp'),
 		svgMin = require('gulp-svgmin'),
 		browserSync = require('browser-sync').create();
 
+
 // pug
 gulp.task('pug', function(){
 	return gulp.src('src/*.pug')
@@ -45,7 +46,7 @@ gulp.task('svg', function() {
 		}))
 		.pipe(svgCheerio({
 			run: function($) {
-				$('[fill]').removeAttr('fill');
+				//$('[fill]').removeAttr('fill');
 				$('[stroke]').removeAttr('stroke');
 				$('[style]').removeAttr('style');
 			},
@@ -54,7 +55,8 @@ gulp.task('svg', function() {
 		.pipe(svgReplace('&gt;', '>'))
 		.pipe(svgSprite({
 			mode: {
-				view: {
+				css: {
+					dest: '.',
 					bust: false,
 					sprite: 'sprite.svg',
 					render: {
@@ -70,7 +72,6 @@ gulp.task('svg', function() {
 });
 
 
-
 // webserver
 gulp.task('webserver', function () {
 	return browserSync.init({
@@ -81,8 +82,11 @@ gulp.task('webserver', function () {
 	});
 });
 
+
 // watch
-gulp.task('default', ['webserver'], function(){
+gulp.task('watch', ['webserver'], function(){
 	gulp.watch('src/*.pug',['pug']);
 	gulp.watch('src/sass/*.sass',['style']);
 });
+
+
