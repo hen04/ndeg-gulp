@@ -15,7 +15,7 @@ var gulp = require('gulp'),
 
 // pug
 gulp.task('pug', function(){
-	return gulp.src('src/*.pug')
+	return gulp.src('src/pug/*.pug')
 		.pipe(pug({pretty: true}))
 		.on('error', console.log)
 		.pipe(gulp.dest('build/'))
@@ -30,6 +30,16 @@ gulp.task('style', function () {
 		.pipe(style({outputStyle: 'expanded'}).on('error', style.logError))
 		.pipe(csso()) // минифицирует стили и склеивает одинаковые классы
 		.pipe(autoprefixer({browsers: ['last 2 versions']}))
+		.pipe(sourcemaps.write('/maps'))
+		.pipe(gulp.dest('build/css/'))
+		.on('end', browserSync.reload);
+});
+
+// style только для разработки, без склеивания и автопрефиксера
+gulp.task('style:dev', function () {
+	return gulp.src('src/sass/**/*.sass')
+		.pipe(sourcemaps.init({loadMaps: true}))
+		.pipe(style({outputStyle: 'expanded'}).on('error', style.logError))
 		.pipe(sourcemaps.write('/maps'))
 		.pipe(gulp.dest('build/css/'))
 		.on('end', browserSync.reload);
@@ -84,9 +94,13 @@ gulp.task('webserver', function () {
 
 
 // watch
-gulp.task('watch', ['webserver'], function(){
-	gulp.watch('src/*.pug',['pug']);
-	gulp.watch('src/sass/*.sass',['style']);
+gulp.task('default', ['webserver'], function(){
+	gulp.watch('src/pug/*.pug',['pug']);
+	gulp.watch('src/sass/*.sass',['style:dev']);
 });
 
+gulp.task('build', ['webserver'], function(){
+	gulp.watch('src/pug/*.pug',['pug']);
+	gulp.watch('src/sass/*.sass',['style']);
+});
 

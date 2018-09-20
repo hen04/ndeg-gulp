@@ -1,2 +1,61 @@
-.icon-access-time:before{background-position:0 0;width:20px;height:20px}.icon-archive-2:before{background-position:-20px 0;width:18px;height:18px}.icon-delete-3:before{background-position:0 -20px;width:14px;height:18px}.icon-done-2:before{background-position:-14px -20px;width:18px;height:14px}body{background-color:#fff;color:#000}main{border:1px solid #0f0}p{margin:0}.icon{position:relative}.icon:before{content:'';position:absolute;left:0;background-image:url(../../img/svg/sprite.svg)}.icon-access-time{padding-left:25px}
+.icon-access-time:before {
+  background-position: 0 0;
+  width: 20px;
+  height: 20px;
+}
+
+.icon-archive-2:before {
+  background-position: -20px 0;
+  width: 18px;
+  height: 18px;
+}
+
+.icon-delete-3:before {
+  background-position: 0 -20px;
+  width: 14px;
+  height: 18px;
+}
+
+.icon-done-2:before {
+  background-position: -14px -20px;
+  width: 18px;
+  height: 14px;
+}
+
+body {
+  background-color: #fff;
+}
+
+body {
+  color: black;
+}
+
+main {
+  border: 1px solid #0f0;
+}
+
+p {
+  margin: 0;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.icon {
+  position: relative;
+}
+
+.icon:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  background-image: url(../../img/svg/sprite.svg);
+}
+
+.icon-access-time {
+  padding-left: 25px;
+}
+
 /*# sourceMappingURL=maps/main-style.css.map */
