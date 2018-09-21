@@ -1,0 +1,7 @@
+mixin navLink(link, name)
+	li(class={active: name === current})
+		a(href=link) #{name}
+
+menu.top-menu
+	+navLink('index.html', 'Главная')
+	+navLink('catalog.html', 'Каталог')

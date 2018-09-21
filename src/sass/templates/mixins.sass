@@ -1,0 +1,21 @@
+=rem($size)
+	font-size: ($size/16)+em
+
+$small: 640px
+$medium: 768px
+$landscape: 1024px
+$large: 1280px
+
+=responsive($media)
+	@if $media == small
+		@media only screen and (max-width: $small - 1) // 639
+			@content
+	@else if $media == portraitlandscape
+		@media only screen and (min-width: $medium) and (max-width: $landscape - 1) // 768 - 1023
+			@content
+	@else if $media == landscape
+		@media only screen and (min-width: $landscape) and (max-width: $large - 1) // 1024 - 1279
+			@content
+	@else if $media == desktop
+		@media only screen and (min-width: $large) // 1280 - desktop only
+			@content

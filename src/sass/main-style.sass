@@ -1,4 +1,6 @@
 @import '../../build/img/svg/sass/_sprite';
+@import 'templates/mixins';
+
 
 body
 	background-color: #fff
@@ -27,3 +29,33 @@ p
 
 .icon-access-time
 	padding-left: 25px 
+
+
+.top-menu
+	display: flex
+	padding: 0
+
+	li
+		list-style: none
+		margin: 0 10px
+		border: 1px solid transparent
+		padding: 3px 10px
+		+rem(20)
+
+		&:first-child
+			margin-left: 0
+
+		&:last-child
+			margin-right: 0
+
+		&.active
+			border: 1px solid #f00
+
+	a
+		text-decoration: none
+		color: #58a
+
+	
+
+footer
+	background-color: #58a

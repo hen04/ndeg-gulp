@@ -15,7 +15,7 @@ var gulp = require('gulp'),
 
 // pug
 gulp.task('pug', function(){
-	return gulp.src('src/pug/*.pug')
+	return gulp.src('src/pug/**/*.pug')
 		.pipe(pug({pretty: true}))
 		.on('error', console.log)
 		.pipe(gulp.dest('build/'))
@@ -95,12 +95,12 @@ gulp.task('webserver', function () {
 
 // watch
 gulp.task('default', ['webserver'], function(){
-	gulp.watch('src/pug/*.pug',['pug']);
+	gulp.watch('src/pug/**/*.pug',['pug']);
 	gulp.watch('src/sass/*.sass',['style:dev']);
 });
 
 gulp.task('build', ['webserver'], function(){
-	gulp.watch('src/pug/*.pug',['pug']);
+	gulp.watch('src/pug/**/*.pug',['pug']);
 	gulp.watch('src/sass/*.sass',['style']);
 });
 
