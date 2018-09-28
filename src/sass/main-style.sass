@@ -4,19 +4,16 @@
 
 body
 	background-color: #fff
-
-body
 	color: black
-
-main
-	border: 1px solid #0f0
 
 p
 	margin: 0
 
+
 .wrapper
 	max-width: 1200px
 	margin: 0 auto
+
 
 .icon 
 	position: relative
@@ -26,6 +23,7 @@ p
 		position: absolute
 		left: 0
 		background-image: url(../../img/svg/sprite.svg)
+
 
 .icon-access-time
 	padding-left: 25px 
@@ -55,7 +53,27 @@ p
 		text-decoration: none
 		color: #58a
 
-	
+
+$list-map: (success: lightgreen, alert: tomato, info: lightblue);
+
+@mixin button-state($btn-state)
+	@if (length($list-map) > 2 or length($list-map) < 5)
+		background-color: map-get($list-map, $btn-state)
+
+.btn
+	text-decoration: none
+	padding: 3px 5px
+	display: inline-block
+	color: black
+
+	&--lightgreen
+		@include button-state(success)
+
+	&--tomato
+		@include button-state(alert)
+
+	&--lightblue
+		@include button-state(info)
 
 footer
 	background-color: #58a
