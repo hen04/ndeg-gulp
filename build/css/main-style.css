@@ -10,28 +10,27 @@
   height: 18px;
 }
 
-.icon-delete-3:before {
+.icon-archive-3:before, .icon-archive-2:hover:before {
   background-position: 0 -20px;
+  width: 18px;
+  height: 18px;
+}
+
+.icon-delete-3:before {
+  background-position: -18px -20px;
   width: 14px;
   height: 18px;
 }
 
 .icon-done-2:before {
-  background-position: -14px -20px;
+  background-position: -38px 0;
   width: 18px;
   height: 14px;
 }
 
 body {
   background-color: #fff;
-}
-
-body {
   color: black;
-}
-
-main {
-  border: 1px solid #0f0;
 }
 
 p {
@@ -45,17 +44,14 @@ p {
 
 .icon {
   position: relative;
+  padding-left: 25px;
 }
 
 .icon:before {
   content: '';
   position: absolute;
   left: 0;
-  background-image: url(../../img/svg/sprite.svg);
-}
-
-.icon-access-time {
-  padding-left: 25px;
+  background-image: url(../img/svg/sprite.svg);
 }
 
 .top-menu {
@@ -86,6 +82,25 @@ p {
 .top-menu a {
   text-decoration: none;
   color: #58a;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 3px 5px;
+  display: inline-block;
+  color: black;
+}
+
+.btn--lightgreen {
+  background-color: lightgreen;
+}
+
+.btn--tomato {
+  background-color: tomato;
+}
+
+.btn--lightblue {
+  background-color: lightblue;
 }
 
 footer {

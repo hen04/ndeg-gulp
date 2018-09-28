@@ -23,6 +23,7 @@
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-svg-sprite": "^1.5.0",
-    "gulp-svgmin": "^2.1.0"
+    "gulp-svgmin": "^2.1.0",
+    "imagemin-pngquant": "^6.0.0"
   }
 }

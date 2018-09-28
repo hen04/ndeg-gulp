@@ -17,16 +17,19 @@ p
 
 .icon 
 	position: relative
+	padding-left: 25px 
 
 	&:before
 		content: ''
 		position: absolute
 		left: 0
-		background-image: url(../../img/svg/sprite.svg)
+		background-image: url(../img/svg/sprite.svg)
+
+	&-archive-2
+		&:hover
+			@extend .icon-archive-3
 
 
-.icon-access-time
-	padding-left: 25px 
 
 
 .top-menu
