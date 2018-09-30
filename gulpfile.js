@@ -22,7 +22,7 @@ var path = {
 		root: 'build/',
 		js: 'build/js/',
 		css: 'build/css/',
-		map: '/maps',
+		maps: '/maps',
 		img: 'build/img/',
 		svg: './build/img/svg/'
 	},
@@ -66,7 +66,7 @@ gulp.task('style:dev', function () {
 	return gulp.src(path.src.sass)
 		.pipe(plugins.sourcemaps.init({loadMaps: true}))
 		.pipe(style({outputStyle: 'expanded'}).on('error', style.logError))
-		.pipe(plugins.sourcemaps.write(path.build.map))
+		.pipe(plugins.sourcemaps.write(path.build.maps))
 		.pipe(gulp.dest(path.build.css))
 		.on('end', browserSync.reload);
 });

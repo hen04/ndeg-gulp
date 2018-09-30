@@ -3,12 +3,13 @@ html(lang="ru")
 	head
 		meta(charset="UTF-8")
 		block title
+		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto")
 		link(rel="stylesheet" href="css/main-style.css")
 
 	body
 
 		header
-			.wrapper
+			.container
 				block menu
 
 		block content
@@ -16,4 +17,5 @@ html(lang="ru")
 		footer
 			p 2
 
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js")
 		script(src="js/main.js")
